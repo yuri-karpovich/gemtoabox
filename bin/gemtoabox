@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# encoding: UTF-8
+
+# resolve bin path, ignoring symlinks
+require "pathname"
+bin_file = Pathname.new(__FILE__).realpath
+
+# add self to libpath
+$:.unshift File.expand_path("../../lib", bin_file)
+
+require "#{Pathname.new(__FILE__).parent.parent}/lib/gemtoabox"
+include Gemtoabox
+
+# parse options
+require 'trollop'
+opts = Trollop::options do
+  opt :gemfile, "path to Gemfile", :type => :string
+  opt :host, "Geminabox host in format http://<USER>:<PASSWORD>@<HOST>:<PORT>", :type => :string
+  opt :overwrite, 'Overwrite gems on versions conflicts'
+end
+
+p = Project.new
+p.add_gemfile(opts[:gemfile])
+GemsUploader.upload(from: p.extract_gems, to: opts[:host], overwrite: opts[:overwrite])
+p.rm_project
+
