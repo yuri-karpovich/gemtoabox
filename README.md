@@ -15,6 +15,10 @@ docker run -d --name geminabox -e RUBYGEMS_PROXY=true -e PRIVATE=true \
 -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
 ```
 
+###### Disadvantages
+- This gem doesn't have any tests so feel free to contribute.
+- Not sure it will work on Windows OS
+
 ## Requirements
 
  - Bundler should be installed 
