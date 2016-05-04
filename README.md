@@ -7,13 +7,7 @@ All you need is to specify path to your project Gemfile.
 - Gems dependencies resolving operation performs on your machine, on your environment. 
  That means you may be sure you save exact same gems versions you use on your project.
 - Easy to use - just run executable bin file with your patamaters.
-- Extremely easy to deploy your own rebygem server with [geminabox](https://hub.docker.com/r/spoonest/geminabox) docker image:
- 
-```bash
-docker run -d --name geminabox -e RUBYGEMS_PROXY=true -e PRIVATE=true \
--v /local_path_where_to_store_gems:/webapps/geminabox/data -p 9292:9292 -P -h geminabox \
--e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
-```
+- Extremely easy to deploy your own rebygem server with [geminabox](https://hub.docker.com/r/spoonest/geminabox) docker image.
 
 ###### Disadvantages
 - This gem doesn't have any tests so feel free to contribute.
