@@ -1,5 +1,6 @@
 require "gemtoabox/version"
 require 'fileutils'
+require 'tmpdir'
 
 module Gemtoabox
 
