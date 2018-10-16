@@ -24,5 +24,5 @@ All you need is to specify path to your project Gemfile. }
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.2', '>= 3.2.0'
   spec.add_dependency 'geminabox', '~> 0.13', '>= 0.13.0'
-  spec.add_dependency 'trollop', '~> 2.1', '>= 2.1.2'
+  spec.add_dependency 'optimist', '~> 3.0'
 end
