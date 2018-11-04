@@ -12,8 +12,8 @@ require "#{Pathname.new(__FILE__).parent.parent}/lib/gemtoabox"
 include Gemtoabox
 
 # parse options
-require 'trollop'
-opts = Trollop::options do
+require 'optimist'
+opts = Optimist::options do
   opt :gemfile, 'path to Gemfile', :type => :string
   opt :host, 'Geminabox host in format http://<USER>:<PASSWORD>@<HOST>:<PORT>', :type => :string
   opt :overwrite, 'Overwrite gems on versions conflicts'
@@ -23,4 +23,3 @@ p = Project.new
 p.add_gemfile(opts[:gemfile])
 GemsUploader.upload(from: p.extract_gems, to: opts[:host], overwrite: opts[:overwrite])
 p.rm_project
-
