@@ -16,7 +16,7 @@ docker run -d --name geminabox -e RUBYGEMS_PROXY=true -e PRIVATE=true \
 ```
 
 ###### Disadvantages
-- This gem doesn't have any tests so feel free to contribute.
+- This gem have no any tests so feel free to contribute.
 - Not sure it will work on Windows OS
 
 ## Requirements
